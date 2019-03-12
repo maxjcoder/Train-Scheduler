@@ -2,14 +2,17 @@
 <html lang="en">
 
 <head>
+    <title>Train Scheduler</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../Train-Scheduler/assets/css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../Train-Scheduler/assets/css/style.css">
+
     <!-- Style to fix the issue of text extending past card length -->
     <style>
         .card-body a {
@@ -17,15 +20,13 @@
         }
 
         .articleHeadline {
-            line-height: 1.5;   
+            line-height: 1.5;
         }
     </style>
-    <title>Train Scheduler</title>
 </head>
 
 <body>
 
-    <!-- Main Bootstrap Search -->
     <div class="container">
 
         <!-- Jumbotron for Title -->
@@ -37,7 +38,56 @@
             </h1>
         </div>
 
+        <!-- Row for Add Train -->
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <!-- First card is for handling the search parameters -->
+                <div class="card">
+                    <div class="card-header">
+                        <strong>
+                            <i class="fa fa-list-alt"></i> Add Train</strong>
+                    </div>
+                    <div class="card-body">
 
+                        <!-- Here we create an HTML Form for handling the inputs-->
+                        <form role="form">
+
+                            <!-- Here we capture the Train Name-->
+                            <div class="form-group">
+                                <label for="name">Train Name:</label>
+                                <input type="text" class="form-control" id="train-name">
+                            </div>
+
+                            <!-- Here we capture the Train Destination-->
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                <input type="text" class="form-control" id="train-dest">
+                            </div>
+
+                            <!-- Here we capture the First Train Time-->
+                            <div class="form-group">
+                                <label for="first-time">First Train Time (HH:mm - military time):</label>
+                                <input type="text" class="form-control" id="train-time">
+                            </div>
+
+                            <!-- Here we capture the Train Frequency -->
+                            <div class="form-group">
+                                <label for="frequency">Frequency (min):</label>
+                                <input type="text" class="form-control" id="train-freq">
+                            </div>
+
+                            <!-- Here we have our  submit button -->
+                            <button type="submit" class="btn btn-default" id="run-search">
+                                <i class="fa fa-search"></i> Search</button>
+                            <button class="btn btn-default" id="clear-all">
+                                <i class="fa fa-trash"></i> Clear Results</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
