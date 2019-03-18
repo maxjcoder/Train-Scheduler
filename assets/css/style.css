@@ -1,6 +1,9 @@
+body {
+    background-color: black;
+}
 .jumbotron {
-    background-color: dodgerblue;
-    color: white;
+    background-color: lightyellow;
+    color: black;
 }
 .table {
     background-color: lightyellow;
@@ -14,6 +17,7 @@
 }
 .panel-title {
     font-family: 'Rock Salt', cursive;
+    color: red;
 }
 label {
     font-family: 'Permanent Marker', cursive;
