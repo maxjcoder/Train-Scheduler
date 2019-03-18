@@ -72,7 +72,7 @@ $(document).ready(function () {
     $("#trainName, #destination, #firstTrain, #interval").val("");
     return false;
   },
-  
+
     //Handle the errors
     function (errorObject) {
       console.log("Errors handled: " + errorObject.code);
