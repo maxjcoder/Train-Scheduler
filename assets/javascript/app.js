@@ -41,7 +41,7 @@ $(document).ready(function () {
     var newFirstTrain = childSnapshot.val().firstTrain;
     var newFreq = childSnapshot.val().frequency;
 
-    // First Time (pushed back 1 year to make sure it comes before current time)
+    // First Time (used Stack Overfolow to find this solution)
     var startTimeConverted = moment(newFirstTrain, "hh:mm").subtract(1, "years");
 
     // Current Time
