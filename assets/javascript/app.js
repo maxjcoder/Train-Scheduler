@@ -11,7 +11,7 @@ $(document).ready(function () {
   };
   firebase.initializeApp(config);
 
-    var database = firebase.database();
+  var database = firebase.database();
 
   // Capture Button Click
   $("#addTrain").on("click", function (event) {
@@ -33,7 +33,7 @@ $(document).ready(function () {
   });
 
 
-  // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+  // Firebase watcher + initial loader 
   database.ref().on("child_added", function (childSnapshot) {
 
     var newTrain = childSnapshot.val().trainName;
@@ -72,12 +72,13 @@ $(document).ready(function () {
     $("#trainName, #destination, #firstTrain, #interval").val("");
     return false;
   },
+  
     //Handle the errors
     function (errorObject) {
       console.log("Errors handled: " + errorObject.code);
     });
 
-}); 
+});
 
 
 
