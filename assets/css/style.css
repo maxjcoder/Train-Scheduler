@@ -1,0 +1,31 @@
+.jumbotron {
+    background-color: dodgerblue;
+    color: white;
+}
+.table {
+    background-color: lightyellow;
+}
+.panel-body {
+    margin-bottom: 3%;
+    background-image: url("../images/grey_@2X.jpg");
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+}
+.panel-title {
+    font-family: 'Rock Salt', cursive;
+}
+label {
+    font-family: 'Permanent Marker', cursive;
+}
+.form-control:hover {
+    border: 2px solid grey;
+    font-weight: bold;
+}
+#footer {
+    background-color: lightyellow;
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+}

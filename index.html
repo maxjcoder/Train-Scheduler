@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Train Scheduler</title>
+    <title>Train Schedule</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,89 +11,89 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../Train-Scheduler/assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">    <link rel="stylesheet" type="text/css" href="../Train-Scheduler/assets/css/style.css">
+    <script src="../Train-Scheduler/assets/javascript/app.js"></script>
 
-    <!-- Style to fix the issue of text extending past card length -->
-    <style>
-        .card-body a {
-            word-break: break-all;
-        }
-
-        .articleHeadline {
-            line-height: 1.5;
-        }
-    </style>
 </head>
 
 <body>
 
     <div class="container">
 
-        <!-- Jumbotron for Title -->
-        <div class="jumbotron" style="background-color: dodgerblue ; color: white;">
-            <h1 class="text-center">
-                <strong>
-                    <i class="fas fa-train"></i> Train Scheduler
-                </strong>
-            </h1>
+        <br>
+
+        <!-- Jumbotron Title -->
+        <div class="jumbotron">
+            <h3 class="text-center"><i class="fas fa-train"></i></h3>
+            <h1 class="text-center">Train Scheduler</h1>
+            <h5 class="text-center">Where are you headed today?</h5>
         </div>
 
-        <!-- Row for Add Train -->
+        <!-- Table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+            </thead>
+            <tbody id="all-display">
+            </tbody>
+        </table>
+
+        <!-- Add Train  -->
         <div class="row">
-            <div class="col-sm-12">
-                <br>
-                <!-- First card is for handling the search parameters -->
-                <div class="card">
-                    <div class="card-header">
-                        <strong>
-                            <i class="fa fa-list-alt"></i> Add Train</strong>
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Train</h3>
                     </div>
-                    <div class="card-body">
-
-                        <!-- Here we create an HTML Form for handling the inputs-->
-                        <form role="form">
-
-                            <!-- Here we capture the Train Name-->
+                    <div class="panel-body">
+                        <form>
                             <div class="form-group">
-                                <label for="name">Train Name:</label>
-                                <input type="text" class="form-control" id="train-name">
+                                <label for="train-name">Train Name</label>
+                                <input class="form-control" id="trainName" type="text">
                             </div>
-
-                            <!-- Here we capture the Train Destination-->
                             <div class="form-group">
                                 <label for="destination">Destination</label>
-                                <input type="text" class="form-control" id="train-dest">
+                                <input class="form-control" id="destination" type="text">
                             </div>
-
-                            <!-- Here we capture the First Train Time-->
                             <div class="form-group">
-                                <label for="first-time">First Train Time (HH:mm - military time):</label>
-                                <input type="text" class="form-control" id="train-time">
+                                <label for="first-train-time">First Train Time (HH:mm - military time)</label>
+                                <input class="form-control" id="firstTrain" type="text">
                             </div>
-
-                            <!-- Here we capture the Train Frequency -->
                             <div class="form-group">
-                                <label for="frequency">Frequency (min):</label>
-                                <input type="text" class="form-control" id="train-freq">
+                                <label for="train-frequency">Frequency (min)</label>
+                                <input class="form-control" id="interval" type="number">
                             </div>
-
-                            <!-- Here we have our  submit button -->
-                            <button type="submit" class="btn btn-default" id="run-search">
-                                <i class="fa fa-search"></i> Search</button>
-                            <button class="btn btn-default" id="clear-all">
-                                <i class="fa fa-trash"></i> Clear Results</button>
-
+                            <button class="btn btn-primary" id="addTrain" type="submit">Submit <i
+                                    class="fas fa-search"></i></button>
                         </form>
                     </div>
                 </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div id="footer">
+                <h2>Visit My Portfolio</h2>
+                <p>My name is Max M. Jackson and I am a web developer in the making.<p>
+                <a href="https://maxjcoder.github.io/Basic-Portfolio/" title="Max Jackson's Web Dev. Portfolio"
+                target="_blank" class="btn btn-warning">Portfolio</a>
             </div>
         </div>
 
     </div>
 
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="../Train-Scheduler/assets/javascript/app.js"></script>
+
 </body>
 
 </html>
